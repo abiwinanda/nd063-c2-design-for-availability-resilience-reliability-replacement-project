@@ -1,3 +1,4 @@
+# Reference: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
 resource "aws_db_subnet_group" "primary_db_subnet_group" {
   name       = "primary-db-subnet-group"
   subnet_ids = [aws_subnet.primary_public_subnet_1.id, aws_subnet.primary_public_subnet_2.id]

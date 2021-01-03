@@ -2,6 +2,7 @@
 #        PRIVATE SUBNETS       #
 ################################
 
+# More on https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
 resource "aws_subnet" "primary_private_subnet_1" {
   vpc_id     = aws_vpc.primary_vpc.id
   cidr_block = "10.1.20.0/24"
