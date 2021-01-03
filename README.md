@@ -42,3 +42,9 @@ screenshots
 |___ part-3
     |___ screenshots.png
 ```
+
+## References
+
+I manage to build this project using terraform because of the many references that I used. Most of these references are coming from
+hashicorp official docs but couples are from personal developer through github or blogpost. I add the reference as a comment directly
+in the terraform code.
