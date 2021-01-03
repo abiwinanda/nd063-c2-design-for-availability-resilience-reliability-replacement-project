@@ -1,0 +1,29 @@
+When connecting to database:
+
+ubuntu@ip-10-1-10-210:~$ mysql -h udacity-replica.chndivk0ztck.ap-southeast-2.rds.amazonaws.com -P 3306 -u secretpass -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.20 Source distribution
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+When inserting data:
+
+mysql> insert into persons (name) values ('abiwinanda');
+Query OK, 1 row affected (0.01 sec)
+
+When reading data:
+
+mysql> select * from persons;
++----+------------+
+| id | name       |
++----+------------+
+|  1 | nyoman     |
+|  3 | abiwinanda |
++----+------------+
+2 rows in set (0.00 sec)
