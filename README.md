@@ -17,10 +17,10 @@ terraform
 |   |...
 |
 |___ secondary-region
-|   |
-|   |___ main.tf
-|   |___ db.tf
-|   |...
+    |
+    |___ main.tf
+    |___ db.tf
+    |...
 ```
 
 ## Getting Started
