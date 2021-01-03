@@ -10,13 +10,13 @@ The project required you to provisioned aws resources in two different regions (
 
 ```bash
 terraform
-|___ primary
+|___ primary-region
 |   |
 |   |___ main.tf
 |   |___ db.tf
 |   |...
 |
-|___ secondary
+|___ secondary-region
 |   |
 |   |___ main.tf
 |   |___ db.tf
