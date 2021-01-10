@@ -1,8 +1,6 @@
-The source database udacity is created in ap-southeast-1 with single AZ while the replica is created in ap-southeast-2 with single AZ as well.
-Deploying udacity DB inside a DB subnet group allows the DB to be replicated across different AZ however since the DB is not replicated across AZ
-in this case than an outage of a single AZ would not make any different than an outage of a single zone. If a single AZ is down and the DB is not accessible 
-then the whole application can be considered not available. Assuming we want to redirect all the DB trafic to the standby DB in the secondary region then promoting
-secondary DB as primary would take about 10 minutes, hence the RTO is 10 minutes. How much the RPO? The fact that the application is not available in the first 
-place means that user can't injest any data since the outage hence the RPO will be 0 in this case. In other word no data is lost but not data can be inserted. 
-If single zone outage happen the solution is the same as before which is to redirect db traffic to the secondary region hence the RTO and RPO stays the same 
-which is 10 minues and 0 respectively.
+The source database udacity is created in ap-southeast-1 with multiple AZ while the replica is created in ap-southeast-2 with single AZ.
+When a DB failed in one AZ, there will be an automatic failover which is done by the DB instance in another AZ. Failover between AZs usually
+happened quickly. According to AWS RDS feature site, this takes about 1 or even less than a minute. Hence the RTO and RPO for a single AZ outage is
+one minute. For the case of a single region outage, the secondary DB has to be promoted first before it could be used. This could take manual steps
+which further increase the RTO and RPO. Promoting replicate DB as primary took about 10 minutes in my project. Assuming that manual steps takes
+about 5 minutes (calling technician, login, mfa, promoting DB) then the RTO and RPO for a single region outage is 15 minutes.
