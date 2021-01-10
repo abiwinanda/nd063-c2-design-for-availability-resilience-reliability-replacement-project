@@ -24,6 +24,38 @@ resource "aws_subnet" "secondary_private_subnet_2" {
   }
 }
 
+# Private route table
+resource "aws_route_table" "secondary_private_rt" {
+  depends_on = [
+    aws_vpc.secondary_vpc,
+  ]
+
+  vpc_id = aws_vpc.secondary_vpc.id
+
+  tags = {
+    Name = "Secondary Private Routes"
+  }
+}
+
+# Attach private route table to private subnets
+resource "aws_route_table_association" "secondary_private_subnet_1_route_table_association" {
+  depends_on = [
+    aws_subnet.secondary_private_subnet_1,
+    aws_route_table.secondary_private_rt,
+  ]
+  subnet_id      = aws_subnet.secondary_private_subnet_1.id
+  route_table_id = aws_route_table.secondary_private_rt.id
+}
+
+resource "aws_route_table_association" "secondary_private_subnet_2_route_table_association" {
+  depends_on = [
+    aws_subnet.secondary_private_subnet_2,
+    aws_route_table.secondary_private_rt,
+  ]
+  subnet_id      = aws_subnet.secondary_private_subnet_2.id
+  route_table_id = aws_route_table.secondary_private_rt.id
+}
+
 ##########################################
 #        PUBLIC SUBNETS (SECONDARY)      #
 ##########################################

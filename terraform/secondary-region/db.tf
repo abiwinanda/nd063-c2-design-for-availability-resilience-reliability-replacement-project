@@ -5,7 +5,7 @@ data "aws_db_instance" "udacity" {
 
 resource "aws_db_subnet_group" "secondary_db_subnet_group" {
   name       = "secondary-db-subnet-group"
-  subnet_ids = [aws_subnet.secondary_public_subnet_1.id, aws_subnet.secondary_public_subnet_2.id]
+  subnet_ids = [aws_subnet.secondary_private_subnet_1.id, aws_subnet.secondary_private_subnet_2.id]
 
   description = "Secondary DB Subnet Group"
 
