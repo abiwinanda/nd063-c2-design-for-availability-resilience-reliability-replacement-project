@@ -1,6 +1,6 @@
-# Data Durability and Recovery
+# Design for Availability, Reliability, and Resiliency
 
-This repo is a submission for Udacity AWS Cloud Architect, Data Durability and Recovery project. The original starter template of this project can be found in the following [link](https://github.com/udacity/nd063-c2-design-for-availability-resilience-reliability-replacement-project-starter-template).
+This repo is a submission for Udacity AWS Cloud Architect, Design for Availability, Reliability, and Resiliency project. The original starter template of this project can be found in the following [link](https://github.com/udacity/nd063-c2-design-for-availability-resilience-reliability-replacement-project-starter-template).
 
 ## Terraform
 
